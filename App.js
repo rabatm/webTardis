@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import FormSite from './components/FormSite';
 import Login from './components/Login';
 
 export default function App() {
@@ -8,6 +9,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <FormSite />
       {notLog ?
       <Login login={() => setNotLog(false) } />
       : <View>
