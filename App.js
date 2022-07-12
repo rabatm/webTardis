@@ -1,11 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Login from './components/Login';
 
 export default function App() {
+  const [notLog,setNotLog]= useState(true)
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      {notLog ?
+      <Login login={() => setNotLog(false) } />
+      : <View>
+        <Text>Loggggéééééé</Text>
+      </View>
+      }
     </View>
   );
 }
