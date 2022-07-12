@@ -40,10 +40,12 @@ const FormSite = () => {
     }
 
     const findINfos = async () => {
+      console.log(dateForm)
       const dateFormat = ([dateForm.getFullYear(), padTo2Digits(dateForm.getMonth()+1), padTo2Digits(dateForm.getDay())].join(''))
       wayback.getInfos(urlForm,dateFormat).then((s) => {
         setUrlSite(s)
         setShowInfos(true)
+        setShowPreview(false)
      })
     }
 
@@ -53,6 +55,10 @@ const FormSite = () => {
 
     const updateViewBut = () => {
       (showPreview) ? setShowPreview(false) : setShowPreview(true)
+    }
+    const dateChange = (event, selectedDate) => {
+      const currentDate = selectedDate || date
+      setDAteForm(currentDate)
     }
 
     return ( 
@@ -65,10 +71,11 @@ const FormSite = () => {
         onChangeText={setUrlForm}
         value={urlForm}
         />
-        <DateTimePicker mode="date" format="yyyymmdd"
+        <DateTimePicker mode="date" 
         value={dateForm}
         onConfirm={setDAteForm}
         display={Platform.OS === 'ios' ? 'spinner' : 'default'}
+        onChange={dateChange}
         />
 
       <TouchableOpacity style={styles.button} onPress={() => findINfos()}>

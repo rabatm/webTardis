@@ -4,6 +4,7 @@ const WAYBACK_URL ='https://archive.org/wayback/available'
 
 export async function getInfos (urlSite,timestamp) {
   let infos={url:'',time:''}
+  console.log(timestamp)
   try {
   const res = await axios.get(`${WAYBACK_URL}?url=${urlSite}&timestamp=${timestamp}`)
 
