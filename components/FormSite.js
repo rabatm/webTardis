@@ -40,7 +40,6 @@ const FormSite = () => {
     }
 
     const findINfos = async () => {
-      console.log(dateForm)
       const dateFormat = ([dateForm.getFullYear(), padTo2Digits(dateForm.getMonth()+1), padTo2Digits(dateForm.getDay())].join(''))
       wayback.getInfos(urlForm,dateFormat).then((s) => {
         setUrlSite(s)

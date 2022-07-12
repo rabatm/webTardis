@@ -1,4 +1,3 @@
-import axios from 'axios';
 const WAYBACK_URL ='https://archive.org/wayback/available'
 
 
