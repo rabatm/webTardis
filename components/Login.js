@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, View,Button,Alert } from 'react-native';
-
 import ImageTardis from './ImageTardis';
 
 
